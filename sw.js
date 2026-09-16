@@ -82,6 +82,7 @@ const ASSETS = (base) => [
     `${base}data/flashcards/unit/chengyu.csv`,
     `${base}data/flashcards/unit/everyday.csv`,
     `${base}data/flashcards/unit/external/china_institute.csv`,
+    `${base}data/flashcards/unit/external/du_chinese.csv`,
     `${base}data/flashcards/unit/external/duolingo.csv`,
     `${base}data/flashcards/unit/external/reddit-1.csv`,
     `${base}data/flashcards/unit/external/reddit-2.csv`,
