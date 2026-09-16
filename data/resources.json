@@ -25,9 +25,9 @@
     { "name": "Nursery Rhymes", "url": "https://open.spotify.com/playlist/7fWvtyy1o7WMEFmSddVU0D?si=44d364b30fef4291" }
   ],
   "apps": [
-    { "name": "DuChinese", "web": "https://duchinese.net/", "ios": "duchinese://", "android": "duchinese://", "description": "Good for reading (subscribed)" },
     { "name": "Duolingo", "web": "https://duolingo.com/", "ios": "duolingo://", "android": "duolingo://", "description": "Good for grammar (free tier)" },
     { "name": "HelloChinese", "description": "Good for a change of pace" },
+    { "name": "DuChinese", "web": "https://duchinese.net/", "ios": "duchinese://", "android": "duchinese://", "description": "Good for reading (subscription cancelled)", "strikethrough": true },
     { "name": "Memrise", "description": "Good for basic phrases (subscription cancelled)", "strikethrough": true }
   ],
   "other": [
