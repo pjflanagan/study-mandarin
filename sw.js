@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'v-c673a82c';
+const CACHE_VERSION = 'v-671f3c77';
 const STATIC_CACHE = `study-mandarin-static-${CACHE_VERSION}`;
 const RUNTIME_CACHE = `study-mandarin-runtime-${CACHE_VERSION}`;
 
@@ -8,6 +8,8 @@ const ASSETS = (base) => [
     `${base}index.html`,
     `${base}page/flashcards/`,
     `${base}page/flashcards/index.html`,
+    `${base}page/lists/`,
+    `${base}page/lists/index.html`,
     `${base}page/read/`,
     `${base}page/read/index.html`,
     `${base}page/zhuyin-trainer/`,
@@ -21,6 +23,7 @@ const ASSETS = (base) => [
     `${base}src/flashcard.css`,
     `${base}src/modal.css`,
     `${base}page/flashcards/style.css`,
+    `${base}page/lists/style.css`,
     `${base}page/read/style.css`,
     `${base}page/zhuyin-trainer/style.css`,
     `${base}page/zhuyin-chart/style.css`,
@@ -30,6 +33,7 @@ const ASSETS = (base) => [
     `${base}src/resources.js`,
     `${base}src/lib/papaparse.min.js`,
     `${base}page/flashcards/flashcard.js`,
+    `${base}page/lists/list.js`,
     `${base}page/read/main.js`,
     `${base}page/zhuyin-trainer/main.js`,
     `${base}page/zhuyin-chart/main.js`,
@@ -84,6 +88,7 @@ const ASSETS = (base) => [
     `${base}data/flashcards/unit/external/china_institute.csv`,
     `${base}data/flashcards/unit/external/du_chinese.csv`,
     `${base}data/flashcards/unit/external/duolingo.csv`,
+    `${base}data/flashcards/unit/external/high_frequency.csv`,
     `${base}data/flashcards/unit/external/reddit-1.csv`,
     `${base}data/flashcards/unit/external/reddit-2.csv`,
     `${base}data/flashcards/unit/external/reddit-sentences.csv`,
@@ -97,7 +102,9 @@ const ASSETS = (base) => [
     `${base}data/flashcards/unit/structures/zai.csv`,
     `${base}data/flashcards/unit/taiwan/places.csv`,
     `${base}data/flashcards/unit/unsorted.csv`,
+    `${base}data/songs/landy_wen_and_jay_chou_rooftop.csv`,
     `${base}data/songs/lo_tayu_childhood.csv`,
+    `${base}data/songs/suddenly_i_want_you_mayday.csv`,
     `${base}data/songs/teresa_teng_i_only_care_about_you.csv`,
     `${base}data/songs/wei_bird_if_i_could.csv`,
     `${base}data/songs/wu_bai_norwegian_forest.csv`,

@@ -9,7 +9,7 @@
     <meta property="og:type" content="website" />
     <meta property="og:title" content="方昕中文 — Traditional Chinese Study Tools" />
     <meta property="og:description" content="Flashcards, a text reader with pinyin and zhuyin annotations, zhuyin drills, and song lyrics — free tools for studying Traditional Mandarin Chinese." />
-    <title>方昕中文: Flashcards</title>
+    <title>方昕中文: Lists</title>
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -35,7 +35,6 @@
     />
     <link rel="stylesheet" href="../../src/base.css" />
     <link rel="stylesheet" href="../../src/modal.css" />
-    <link rel="stylesheet" href="../../src/flashcard.css" />
     <link rel="stylesheet" href="../../src/colors.css" />
     <link rel="stylesheet" href="style.css" />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
@@ -53,9 +52,8 @@
       <a id="home-link" class="header-back" href="#">&#8592;</a>
       <span class="header-title"></span>
       <div class="header-actions">
-        <a onclick="flashcardPage.openModal()" class="header-action">Set</a>
-        <a id="mode" onclick="flashcardPage.cycleMode()" class="header-action">汉字 → English</a>
-        <a onclick="flashcardPage.reset()" class="header-action" style="opacity: 0.35">Reset</a>
+        <a onclick="listPage.openModal()" class="header-action">Set</a>
+        <a id="known-toggle" onclick="listPage.toggleShowKnown()" class="header-action">Hide Known</a>
       </div>
     </div>
     <div id="modal">
@@ -65,46 +63,46 @@
         <hr />
         <p>Structures</p>
         <ul>
-          <li><a onclick="flashcardPage.chooseSet('unit/structures/structures')">Structures</a></li>
-          <li><a onclick="flashcardPage.chooseSet('unit/structures/x_bu_y')">X 不 Y</a></li>
-          <li><a onclick="flashcardPage.chooseSet('unit/structures/zai')">在...</a></li>
+          <li><a onclick="listPage.chooseSet('unit/structures/structures')">Structures</a></li>
+          <li><a onclick="listPage.chooseSet('unit/structures/x_bu_y')">X 不 Y</a></li>
+          <li><a onclick="listPage.chooseSet('unit/structures/zai')">在...</a></li>
           <!-- Directions -->
         </ul>
         <p>Unsorted</p>
         <ul>
-          <li><a onclick="flashcardPage.chooseSet('unit/measure_words')">Measure Words</a></li>
-          <li><a onclick="flashcardPage.chooseSet('unit/chengyu')">成語 - Idioms</a></li>
+          <li><a onclick="listPage.chooseSet('unit/measure_words')">Measure Words</a></li>
+          <li><a onclick="listPage.chooseSet('unit/chengyu')">成語 - Idioms</a></li>
           <li style="color:#999;">More coming soon...</li>
           <!-- Directions -->
         </ul>
         <p>Sourced</p>
         <ul>
           <li>
-            <a onclick="flashcardPage.chooseSet('unit/external/high_frequency')">High Frequency</a> -
+            <a onclick="listPage.chooseSet('unit/external/high_frequency')">High Frequency</a> -
             <span style="color: #999">
               The most common words in Mandarin, from Wiktionary's frequency list
             </span>
           </li>
           <li>
-            <a onclick="flashcardPage.chooseSet('unit/external/du_chinese')">DuChinese</a> -
+            <a onclick="listPage.chooseSet('unit/external/du_chinese')">DuChinese</a> -
             <span style="color: #999">
               Sourced from stories on DuChinese
             </span>
           </li>
           <li>
-            <a onclick="flashcardPage.chooseSet('unit/external/china_institute')">China Institute</a> -
+            <a onclick="listPage.chooseSet('unit/external/china_institute')">China Institute</a> -
             <span style="color: #999">
               Sourced from a class I took at the China Institute in NYC
             </span>
           </li>
           <li>
-            <a onclick="flashcardPage.chooseSet('unit/external/duolingo')">Duolingo</a> -
+            <a onclick="listPage.chooseSet('unit/external/duolingo')">Duolingo</a> -
             <span style="color: #999">
               Sourced from Duolingo's public API
             </span>
           </li>
           <li>
-            <a onclick="flashcardPage.chooseSet('unit/external/reddit')">Reddit</a> -
+            <a onclick="listPage.chooseSet('unit/external/reddit')">Reddit</a> -
             <span style="color: #999">
               Sourced from a Reddit user (I can't find the original link)
             </span>
@@ -114,36 +112,14 @@
     </div>
     <div id="container">
       <div id="count"></div>
-      <div id="hanzi"></div>
-      <div id="pinyin"></div>
-      <div id="english"></div>
-    </div>
-    <div id="actions" class="no-select">
-      <div class="action">
-        <a
-          id="known-button"
-          onclick="flashcardPage.markAsKnown()"
-          style="color: #999"
-          >Known</a
-        >
-      </div>
-      <div class="action">
-        <a id="reveal-or-next-button" onclick="flashcardPage.revealOrNext()"
-          >Reveal</a
-        >
-      </div>
-      <div class="action">
-        <a id="google-translate" target="_blank" style="color: #999"
-          >Translate</a
-        >
-      </div>
+      <div id="list"></div>
     </div>
   </body>
   <script src="../../src/lib/papaparse.min.js"></script>
   <script src="../../src/util.js"></script>
-  <script src="flashcard.js"></script>
+  <script src="list.js"></script>
   <script>
-    const flashcardPage = new FlashcardPage();
-    flashcardPage.init();
+    const listPage = new ListPage();
+    listPage.init();
   </script>
 </html>

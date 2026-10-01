@@ -1,0 +1,51 @@
+/* container */
+
+#container {
+  margin: 24px auto 92px;
+  width: 94%;
+  max-width: 620px;
+}
+
+#count {
+  font-size: 12px;
+  text-align: center;
+  opacity: 0.7;
+  margin-bottom: 12px;
+}
+
+/* list */
+
+#list .row {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 10px 16px;
+  margin-bottom: 6px;
+  border-radius: 6px;
+  box-shadow: 0px 4px 10px #0004;
+}
+
+#list .row.known {
+  opacity: 0.45;
+}
+
+#list .row .hanzi {
+  flex-shrink: 0;
+  min-width: 64px;
+  font-size: 28px;
+}
+
+#list .row .details {
+  flex: 1;
+  min-width: 0;
+}
+
+#list .row .pinyin {
+  font-size: 16px;
+  opacity: 0.9;
+}
+
+#list .row .english {
+  font-size: 12px;
+  opacity: 0.8;
+}
