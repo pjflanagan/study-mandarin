@@ -49,3 +49,67 @@
   font-size: 12px;
   opacity: 0.8;
 }
+
+#list .row {
+  cursor: pointer;
+}
+
+/* known checkbox: uses currentColor so it reads on light and dark cards */
+
+#list .row .known-checkbox {
+  appearance: none;
+  -webkit-appearance: none;
+  flex-shrink: 0;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  margin: 0;
+  border: 2px solid currentColor;
+  border-radius: 5px;
+  background: transparent;
+  color: inherit;
+  opacity: 0.5;
+  cursor: pointer;
+  transition: opacity 0.15s, background 0.15s;
+}
+
+#list .row .known-checkbox:hover {
+  opacity: 0.85;
+}
+
+#list .row .known-checkbox:checked {
+  opacity: 1;
+  background: currentColor;
+}
+
+#list .row .known-checkbox:checked::after {
+  content: '';
+  position: absolute;
+  left: 5px;
+  top: 1px;
+  width: 5px;
+  height: 10px;
+  border: solid #0008;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+/* light cards have black text, so the filled box is dark and needs a light check */
+#list .row:is(.tan, .yellow, .white, .light-grey, .light-gray) .known-checkbox:checked::after {
+  border-color: #fffc;
+}
+
+#list .row .known-checkbox:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 2px;
+}
+
+/* modes: hidden fields are revealed by tapping the row */
+
+#list.mode-1 .row:not(.revealed) .pinyin,
+#list.mode-1 .row:not(.revealed) .english,
+#list.mode-2 .row:not(.revealed) .english,
+#list.mode-3 .row:not(.revealed) .hanzi,
+#list.mode-3 .row:not(.revealed) .pinyin {
+  visibility: hidden;
+}
